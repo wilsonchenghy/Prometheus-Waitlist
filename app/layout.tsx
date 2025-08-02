@@ -5,7 +5,12 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Prometheus',
-  description: "Join the waitlist for Prometheus, the world's first AI Hardware x Software Engineer."
+  description: "Join the waitlist for Prometheus, the world's first AI Hardware x Software Engineer.",
+  icons: {
+    icon: '/assets/prometheus-icon.png',
+    shortcut: '/assets/prometheus-icon.png',
+    apple: '/assets/prometheus-icon.png',
+  },
 }
 
 export default function RootLayout({

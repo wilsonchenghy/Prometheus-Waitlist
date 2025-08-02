@@ -94,7 +94,7 @@ export default function WaitlistPage() {
           </h1>
 
           {/* New Subtitle */}
-          <p className="text-lg font-mono text-gray-800 mb-8">The world's first AI Hardware x Software Engineer</p>
+          <p className="text-lg font-mono text-gray-800 mb-8 mt-8">The world's first AI Hardware x Software Engineer 🔥</p>
 
           {/* Signup Count */}
           <p className="text-lg font-mono text-gray-600 mb-12">
@@ -138,8 +138,8 @@ export default function WaitlistPage() {
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <img src="/assets/prometheus-icon.png" alt="Prometheus Icon" className="w-6 h-5" />
-              <img src="/assets/prometheus-logo.png" alt="Prometheus" className="h-5 ml-2" />
+              <img src="/assets/prometheus-icon.png" alt="Prometheus Icon" className="w-8 h-7" />
+              <img src="/assets/prometheus-logo.png" alt="Prometheus" className="h-7 ml-2" />
             </div>
             <div className="text-sm font-mono text-gray-600">© 2025 Prometheus. All rights reserved.</div>
           </div>
