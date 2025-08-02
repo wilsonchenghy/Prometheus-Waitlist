@@ -11,6 +11,8 @@ import { supabase } from "../lib/supabase"
 export default function WaitlistPage() {
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   const [isLoading, setIsLoading] = useState(false)
   const [signupCount, setSignupCount] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -30,13 +32,23 @@ export default function WaitlistPage() {
       }
     }
     fetchCount()
+    // Check localStorage for isSubmitted
+    if (typeof window !== 'undefined') {
+      const submitted = localStorage.getItem('prometheus_waitlist_is_submitted')
+      if (submitted === 'true') {
+        setIsSubmitted(true)
+      }
+    }
     return () => clearTimeout(timer)
   }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
-
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.")
+      return
+    }
     setIsLoading(true)
     // Insert email into Supabase
     const { error } = await supabase
@@ -46,6 +58,9 @@ export default function WaitlistPage() {
       setIsSubmitted(true)
       setSignupCount((prev) => prev + 1)
       setEmail("")
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('prometheus_waitlist_is_submitted', 'true')
+      }
     } else {
       alert("Error submitting your email. Please try again later.")
     }
