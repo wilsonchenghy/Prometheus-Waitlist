@@ -97,13 +97,13 @@ export default function WaitlistPage() {
           <p className="text-lg font-mono text-gray-800 mb-8 mt-8">The world's first AI Hardware x Software Engineer 🔥</p>
 
           {/* Signup Count */}
-          <p className="text-lg font-mono text-gray-600 mb-12">
+          {/* <p className="text-lg font-mono text-gray-600 mb-12">
             {signupCount > 0 ? `Join ${signupCount.toLocaleString()} users who have signed up` : "Be the first to join the waitlist"}
-          </p>
+          </p> */}
 
           {/* Waitlist Form */}
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-14">
               <div className="flex flex-col sm:flex-row gap-3">
                 <Input
                   type="email"
